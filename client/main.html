@@ -1,0 +1,31 @@
+<head>
+  <title>reactivearray-issue</title>
+</head>
+
+<body>
+  {{> test}}
+</body>
+
+<template name="test">
+  {{> input (inputProps 1)}}
+  {{> input (inputProps 2)}}
+  {{> input (inputProps 3)}}
+  {{> input (inputProps 4)}}
+  {{> input (inputProps 5)}}
+
+  <h1>Values as ReactiveArray</h1>
+  <pre>
+    {{ valuesAsReactiveArray }}
+  </pre>
+
+  <h1>Values as Array</h1>
+  <pre>
+    {{ valuesAsArray }}
+  </pre>
+</template>
+
+<template name="input">
+  <div>
+    <input {{b "value: textValue"}} type="text"/><button {{b "click: onChange(textValue)"}} type="button">Save value</button>
+  </div>
+</template>
